@@ -1,11 +1,13 @@
-const express = require('express')
-const route = require('./auth')
-const app = express()
+const express = require("express");
+const route = require("./auth");
+const app = express();
 
-app.use('/api/auth', route)
-app.get('/',(req,res) => {
-    res.status(200).send('app.js')
-});
+app.use(express.json());
+app.use("/api/auth", route);
+
+// app.get('/',(req,res) => {
+//     res.status(200).send('"message": hellow')
+// });
 
 // app.get('/about', (req,res) => {
 //     res.send('hellow form about')
@@ -17,7 +19,7 @@ app.get('/',(req,res) => {
 //     res.send('hellow form temp')
 // })
 
-const port = 8000
-app.listen(port,() =>{
-    console.log(`listning ${port}`)
-})
+const port = 8000;
+app.listen(port, () => {
+  console.log(`listning ${port}`);
+});
